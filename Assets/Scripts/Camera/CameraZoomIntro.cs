@@ -17,12 +17,9 @@ public class CameraZoomIntro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        Debug.Log("Machine x: " + machineTransform.position.x);
-        Debug.Log("Camera x: " + transform.position.x);
-        if((machineTransform.position.x -1)  <= transform.position.x)
-        {
+        if((machineTransform.position.z -2)  <= transform.position.z)
             machineAnimation.SetBool("isRotating", false);
-        }
+        else
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 }
