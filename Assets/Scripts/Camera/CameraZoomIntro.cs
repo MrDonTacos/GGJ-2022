@@ -7,13 +7,14 @@ public class CameraZoomIntro : MonoBehaviour
 {
     // Start is called before the first frame update
     private Transform transform;
-    private Transform transformCopy;
     public float speed;
     public Transform machineTransform;
-    public Animator machineAnimation;
+    private MachineAnimations machineScript;
     void Start()
     {
         transform = GetComponent<Transform>();
+        machineScript = machineTransform.GetComponent<MachineAnimations>();
+        // machineAnimation = machineTransform.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,9 +24,8 @@ public class CameraZoomIntro : MonoBehaviour
         var tmpRotation = machineTransform.eulerAngles;
         if((tmp.z - 0.75)  <= transform.position.z && ((tmpRotation.y <= -85f && tmpRotation.y >= -100) || (tmpRotation.y >= 260 && tmpRotation.y <= 280)))
         {
-            machineAnimation.SetBool("isRotating", false);
             speed = 0;
-            machineTransform.rotation = Quaternion.Euler(0, -90, 0);
+            machineScript.isRotating(false);
         }
         else
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
