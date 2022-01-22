@@ -14,21 +14,18 @@ public class CameraZoomIntro : MonoBehaviour
     void Start()
     {
         transform = GetComponent<Transform>();
-        machineAnimation.SetBool("isRotating", true);
     }
 
     // Update is called once per frame
     void Update()
     {
         var tmp = machineTransform.position;   
-        float tmpRotation = machineTransform.rotation.y * 100;
-        Debug.Log("Float: " + tmpRotation);
-        Debug.Log("Integer: " + (int)tmpRotation);
-        if((tmp.z - 0.7)  <= transform.position.z && (int)tmpRotation == -83)
+        var tmpRotation = machineTransform.eulerAngles;
+        if((tmp.z - 0.75)  <= transform.position.z && ((tmpRotation.y <= -85f && tmpRotation.y >= -100) || (tmpRotation.y >= 260 && tmpRotation.y <= 280)))
         {
             machineAnimation.SetBool("isRotating", false);
             speed = 0;
-            // machineTransform.rotation = Quaterion.Euler(0, -90, 0);
+            machineTransform.rotation = Quaternion.Euler(0, -90, 0);
         }
         else
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
