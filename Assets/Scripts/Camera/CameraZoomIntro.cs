@@ -16,7 +16,7 @@ public class CameraZoomIntro : MonoBehaviour
         machineScript = machineTransform.GetComponent<MachineAnimations>();
         // machineAnimation = machineTransform.GetComponent<Animator>();
     }
-
+    // Update git
     // Update is called once per frame
     void Update()
     {

@@ -27,6 +27,7 @@ public class MachineAnimations : MonoBehaviour
         {
             animation.SetBool("isRotating", isRotating);
             transform.rotation = Quaternion.Euler(0, -90, 0);
+            animation.SetBool("isCoin", true);
         }
     }
     private void insertCoin()
