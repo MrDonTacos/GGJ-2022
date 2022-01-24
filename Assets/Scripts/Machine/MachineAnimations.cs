@@ -9,6 +9,8 @@ public class MachineAnimations : MonoBehaviour
     public AudioSource audioController;
     public AudioClip coinSound;
     private Transform transform;
+    public GameObject screenObj;
+
     void Start()
     {
         animation = GetComponent<Animator>();
@@ -34,4 +36,9 @@ public class MachineAnimations : MonoBehaviour
     {
         audioController.PlayOneShot(coinSound);
     }
+
+    private void enabledIntroScreen()
+    {
+        screenObj.active = true;
+    } 
 }
