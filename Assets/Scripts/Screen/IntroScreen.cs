@@ -8,8 +8,7 @@ public class IntroScreen : MonoBehaviour
     private GameObject transform;
     void Start()
     {
-        transform = GetComponent<GameObject>();
-        transform.active = false;
+        this.transform = GetComponent<GameObject>();
     }
 
     // Update is called once per frame
