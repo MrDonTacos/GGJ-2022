@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 1515267676}
   - component: {fileID: 1515267675}
   - component: {fileID: 1515267674}
+  - component: {fileID: 1515267679}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -162,7 +163,7 @@ VideoPlayer:
   m_RenderMode: 3
   m_AspectRatio: 2
   m_DataSource: 0
-  m_PlaybackSpeed: 1
+  m_PlaybackSpeed: 2
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
@@ -255,6 +256,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+--- !u!114 &1515267679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515267673}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4810e1d67674cd4d8f0f8dc59977267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1660791030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -331,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioController: {fileID: 1660791034}
   coinSound: {fileID: 8300000, guid: f8e47d6bec4024ae18a86bdeb97a5e8c, type: 3}
+  screenObj: {fileID: 1515267673}
 --- !u!95 &1660791033
 Animator:
   serializedVersion: 3
