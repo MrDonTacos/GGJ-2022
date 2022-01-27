@@ -1,26 +1,15 @@
 fileFormatVersion: 2
-guid: b89cece2642d2d64185f1931758b1069
+guid: 7c86081f323d62a3686c644e308d1500
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 2126459665172807778
-    second: IDLE
-  - first:
-      74: 4774246483758387316
-    second: IZQ
-  - first:
-      74: -3951560472916171052
-    second: DER
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 340b738df4937e90a939036c71a07b89, type: 2}
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects: {}
   materials:
     materialImportMode: 2
-    materialName: 1
+    materialName: 0
     materialSearch: 1
     materialLocation: 1
   animations:
