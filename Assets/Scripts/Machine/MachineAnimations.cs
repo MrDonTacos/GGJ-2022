@@ -23,14 +23,17 @@ public class MachineAnimations : MonoBehaviour
         
     }
 
-    public void isRotating(bool isRotating)
+    public bool isRotating(bool isRotating)
     {
         if(!isRotating)
         {
             animation.SetBool("isRotating", isRotating);
             transform.rotation = Quaternion.Euler(0, -90, 0);
             animation.SetBool("isCoin", true);
+            return false;
         }
+        else
+            return true;
     }
     private void insertCoin()
     {
