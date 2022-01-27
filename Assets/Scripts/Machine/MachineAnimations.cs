@@ -9,6 +9,8 @@ public class MachineAnimations : MonoBehaviour
     public AudioSource audioController;
     public AudioClip coinSound;
     private Transform transform;
+    public GameObject screenObj;
+
     void Start()
     {
         animation = GetComponent<Animator>();
@@ -21,17 +23,25 @@ public class MachineAnimations : MonoBehaviour
         
     }
 
-    public void isRotating(bool isRotating)
+    public bool isRotating(bool isRotating)
     {
         if(!isRotating)
         {
             animation.SetBool("isRotating", isRotating);
             transform.rotation = Quaternion.Euler(0, -90, 0);
             animation.SetBool("isCoin", true);
+            return false;
         }
+        else
+            return true;
     }
     private void insertCoin()
     {
         audioController.PlayOneShot(coinSound);
     }
+
+    private void enabledIntroScreen()
+    {
+        screenObj.active = true;
+    } 
 }
