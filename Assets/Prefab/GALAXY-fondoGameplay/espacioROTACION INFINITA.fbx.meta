@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: d0b9b8b4a4cb87d4e9cc795dc404a985
+guid: abcb9856768b0de40899f935684a61a1
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: -7626831543155339912
-    second: NO PRESSED
-  - first:
-      74: -2731743427180389446
-    second: PRESSED
+      74: -1488972467503244120
+    second: ROTACION INFINITA
   externalObjects: {}
   materials:
     materialImportMode: 2
