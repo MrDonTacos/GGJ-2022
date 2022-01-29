@@ -5,15 +5,41 @@ using UnityEngine;
 public class AutoPlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
+    private Transform transform;
+    [SerializeField] private Transform keyLeft;
+    [SerializeField] private Animator animKeyLeft;
+    [SerializeField] private Transform keyRight;
+    [SerializeField] private Animator animKeyRight;
+    public bool isRight = true;
+    public float speed; 
     void Start()
     {
-        
+        transform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform.position.x < (keyRight.position.x +1f) && isRight)
+        {
+            transform.Translate(transform.right * speed * Time.deltaTime);
+            animKeyLeft.SetBool("isPressed", false);
+            animKeyRight.SetBool("isPressed", true);
+        }
+        else
+        {
+            isRight = false;
+            Debug.Log(isRight);  
+            Debug.Log("player x-position: " + transform.position.x + " /n key left x-position: " + keyLeft.position.x);           
+            if(transform.position.x > (keyLeft.position.x -1f) && !isRight)
+            {
+                transform.Translate((transform.right * speed * Time.deltaTime) * -1);
+                animKeyRight.SetBool("isPressed", false);
+                animKeyLeft.SetBool("isPressed", true);
+            }
+            else
+                isRight = true;
+        }
     }
 
     public void leftMovement()
