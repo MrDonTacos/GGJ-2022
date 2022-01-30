@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class AutoPlayerShoot : MonoBehaviour
 {
-    [SerializeField] private Transform bulletPosA;
-    [SerializeField] private Transform bulletPosB;
+    [SerializeField] private GameObject bulletA;
+    [SerializeField] private GameObject bulletB;
+    [SerializeField] private Transform bulletAPos;
+    [SerializeField] private Transform bulletBPos;
+    private bool isLeft;
     void Start()
     {
-        PrepareBullet();
+        if(!isLeft)
+        {
+            PrepareBullet(bulletA);
+        }
+        else
+        {
+            PrepareBullet(bulletB);
+        }
     }
 
     // Update is called once per frame
@@ -18,7 +28,14 @@ public class AutoPlayerShoot : MonoBehaviour
 
     void PrepareBullet(GameObject bullet)
     {
-        bullet.Transform.position = Bullet.position;
-        bullet.SetActive(true);
+        if(!isLeft)
+        {
+            bullet.transform.position = bulletAPos.position;
+            bullet.SetActive(true);
+        }
+        else
+        {
+
+        }
     }
 }
