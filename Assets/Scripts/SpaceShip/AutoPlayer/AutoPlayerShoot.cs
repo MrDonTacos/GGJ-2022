@@ -8,34 +8,38 @@ public class AutoPlayerShoot : MonoBehaviour
     [SerializeField] private GameObject bulletB;
     [SerializeField] private Transform bulletAPos;
     [SerializeField] private Transform bulletBPos;
-    private bool isLeft;
+    [SerializeField] private Animator keyX;
+    [SerializeField] private Animator keyZ;
+    private bool isLeft = false;
     void Start()
     {
-        if(!isLeft)
-        {
-            PrepareBullet(bulletA);
-        }
-        else
-        {
-            PrepareBullet(bulletB);
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!isLeft && !bulletB.active)
+        {
+            keyZ.SetBool("isPressed", false);
+            keyX.SetBool("isPressed", true);
+            PrepareBullet(bulletA, bulletAPos);
+        }
+        else if(isLeft && !bulletA.active)
+        {
+            keyX.SetBool("isPressed", false);
+            keyZ.SetBool("isPressed", true);
+            PrepareBullet(bulletB, bulletBPos);
+        }
     }
 
-    void PrepareBullet(GameObject bullet)
+    void PrepareBullet(GameObject bullet, Transform bulletPosition)
     {
-        if(!isLeft)
-        {
-            bullet.transform.position = bulletAPos.position;
+            bullet.transform.position = bulletPosition.position;
             bullet.SetActive(true);
-        }
+        if(!isLeft)
+            isLeft = true;
         else
-        {
-
-        }
+            isLeft = false;
     }
 }

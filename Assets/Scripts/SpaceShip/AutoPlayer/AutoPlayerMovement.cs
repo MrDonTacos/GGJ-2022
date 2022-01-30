@@ -29,9 +29,7 @@ public class AutoPlayerMovement : MonoBehaviour
         }
         else
         {
-            isRight = false;
-            Debug.Log(isRight);  
-            Debug.Log("player x-position: " + transform.position.x + " /n key left x-position: " + keyLeft.position.x);           
+            isRight = false;         
             if(transform.position.x > (keyLeft.position.x -1f) && !isRight)
             {
                 transform.Translate((transform.right * speed * Time.deltaTime) * -1);
