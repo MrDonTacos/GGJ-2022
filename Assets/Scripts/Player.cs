@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 5f;
-    //public Projectile laserPrefab;
+    public Projectile laserPrefab;
     public System.Action killed;
     public bool laserActive { get; private set; }
 
@@ -34,23 +34,25 @@ public class Player : MonoBehaviour
         // Clamp the position of the character so they do not go out of bounds
         position.x = Mathf.Clamp(position.x, leftEdge.x, rightEdge.x);
         transform.position = position;
-
+        */
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
             Shoot();
-        }*/
+        }
     }
 
     private void Shoot()
     {
         // Only one laser can be active at a given time so first check that
         // there is not already an active laser
-        if (!laserActive)
+        /*if (!laserActive)
         {
             laserActive = true;
 
-            //Projectile laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
-            //laser.destroyed += OnLaserDestroyed;
-        }
+            Projectile laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+            laser.destroyed += OnLaserDestroyed;
+        }*/
+
+        //Instantiate(laserPrefab, transform.position, Quaternion.identity);
     }
 
     /*private void OnLaserDestroyed(Projectile laser)
