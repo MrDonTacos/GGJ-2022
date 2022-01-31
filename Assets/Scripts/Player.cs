@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bulletB;
     [SerializeField] private Transform bulletAPos;
     [SerializeField] private Transform bulletBPos;
+    [SerializeField] private Animator animSpace;
     private bool isRed = true;
     
 
@@ -17,12 +18,14 @@ public class Player : MonoBehaviour
     {
         Vector3 position = transform.position;
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
             //position.x -= speed * Time.deltaTime;
+            animSpace.SetFloat("movement", -1f);
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
             //position.x += speed * Time.deltaTime;
+            animSpace.SetFloat("movement", 1f);
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -32,6 +35,15 @@ public class Player : MonoBehaviour
         else if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             transform.position -= Vector3.up * speed * Time.deltaTime;
+        }
+
+         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow)) {
+            //position.x -= speed * Time.deltaTime;
+            animSpace.SetFloat("movement", 0f);
+        }
+        else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) {
+            //position.x += speed * Time.deltaTime;
+            animSpace.SetFloat("movement", 0f);
         }
 
         /*Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
