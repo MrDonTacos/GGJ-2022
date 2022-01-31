@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: b07f24d10a9128342a0762a2a98e171e
+  - enabled: 1
+    path: Assets/Scenes/Enemey.unity
+    guid: efa299dbd89aa10498dd96c9a38f0897
   m_configObjects: {}

@@ -21,29 +21,14 @@ public class BulletB : MonoBehaviour
         Debug.Log("Enter to collider");
         if (other.tag == "Keys")
         {
-            // Hazard hazard = other.GetComponent<Hazard>();
-            // if (hazard != null)
-            // {
-            //     hazard.Deactivate();
-            // }
             gameObject.SetActive(false);
         }
-        // else
-        // {
-        //     Enemy enemy = other.GetComponent<Enemy>();
-        //     if (enemy != null)
-        //     {
-        //         bulletPoolObject.ReturnToPool();
-        //         enemy.HitTimesForStunned--;
-        //     }
-        // }
         else if (other.tag == "Enemy")
         {
-            // Hazard hazard = other.GetComponent<Hazard>();
-            // if (hazard != null)
-            // {
-            //     hazard.Deactivate();
-            // }
+            gameObject.SetActive(false);
+        }
+        else if (other.tag == "EnemyRed")
+        {
             gameObject.SetActive(false);
         }
     }

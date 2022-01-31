@@ -21,30 +21,15 @@ public class BulletA : MonoBehaviour
         Debug.Log("Enter to collider");
         if (other.tag == "Keys")
         {
-            // Hazard hazard = other.GetComponent<Hazard>();
-            // if (hazard != null)
-            // {
-            //     hazard.Deactivate();
-            // }
             gameObject.SetActive(false);
         }
-        if (other.tag == "Enemy")
+        else if (other.tag == "EnemyRed")
         {
-            // Hazard hazard = other.GetComponent<Hazard>();
-            // if (hazard != null)
-            // {
-            //     hazard.Deactivate();
-            // }
             gameObject.SetActive(false);
         }
-        // else
-        // {
-        //     Enemy enemy = other.GetComponent<Enemy>();
-        //     if (enemy != null)
-        //     {
-        //         bulletPoolObject.ReturnToPool();
-        //         enemy.HitTimesForStunned--;
-        //     }
-        // }
+        else if (other.tag == "Enemy")
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

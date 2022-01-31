@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class Player : MonoBehaviour
         else if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             transform.position -= Vector3.up * speed * Time.deltaTime;
+        }
+        else if(Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
         }
 
         /*Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);

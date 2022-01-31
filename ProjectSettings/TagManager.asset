@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - BulletBlue
   - BulletRed
+  - EnemyRed
   layers:
   - Default
   - TransparentFX

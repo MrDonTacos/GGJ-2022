@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Invaders : MonoBehaviour
 {
+    [SerializeField] GameObject player;
     [Header("Invaders")]
     public Invader[] prefabs = new Invader[5];
     public AnimationCurve speed = new AnimationCurve();
@@ -41,7 +43,12 @@ public class Invaders : MonoBehaviour
             {
                 // Create an invader and parent it to this transform
                 Invader invader = Instantiate(prefabs[i], transform);
-                invader.tag = "Enemy";
+                if(invader.name == "AlienShip_01(Clone)")
+                    invader.tag = "Enemy";
+                    
+                if(invader.name == "AlienShip_02(Clone)")
+                    invader.tag = "EnemyRed";
+                    
                 invader.killed += OnInvaderKilled;
 
                 // Calculate and set the position of the invader in the row
@@ -118,6 +125,11 @@ public class Invaders : MonoBehaviour
                 break;
             }
         }
+        Debug.Log(AmountKilled);
+            if(AmountKilled == 15 && player.name == "PlayerShip")
+                SceneManager.LoadScene("Enemey");
+            else if (AmountKilled == 15 && player.name == "AlienShipPlayer")
+                SceneManager.LoadScene("Battefield");
     }
 
     private void AdvanceRow()

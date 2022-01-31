@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //[RequireComponent(typeof(SpriteRenderer))]
 public class Invader : MonoBehaviour
@@ -35,9 +36,10 @@ public class Invader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "BulletBlue") {
+        if (other.tag == "BulletBlue" && gameObject.name == "AlienShip_01(Clone)")
             killed?.Invoke(this);
-        }
+        else if(other.tag == "BulletRed" && gameObject.name == "AlienShip_02(Clone)")
+            killed?.Invoke(this);
     }
 
 }
