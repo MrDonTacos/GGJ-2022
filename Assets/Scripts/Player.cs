@@ -18,14 +18,12 @@ public class Player : MonoBehaviour
     {
         Vector3 position = transform.position;
 
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
             //position.x -= speed * Time.deltaTime;
-            animSpace.SetFloat("movement", -1f);
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
             //position.x += speed * Time.deltaTime;
-            animSpace.SetFloat("movement", 1f);
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -37,15 +35,6 @@ public class Player : MonoBehaviour
             transform.position -= Vector3.up * speed * Time.deltaTime;
         }
 
-         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow)) {
-            //position.x -= speed * Time.deltaTime;
-            animSpace.SetFloat("movement", 0f);
-        }
-        else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) {
-            //position.x += speed * Time.deltaTime;
-            animSpace.SetFloat("movement", 0f);
-        }
-
         /*Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
 
@@ -53,13 +42,13 @@ public class Player : MonoBehaviour
         position.x = Mathf.Clamp(position.x, leftEdge.x, rightEdge.x);
         transform.position = position;
         */
-        if (Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(0)) {
+        if (Input.GetKey(KeyCode.X) || Input.GetMouseButtonDown(0)) {
             if(!bulletB.active && !bulletA.active)
             {
                 PrepareBullet(bulletA, bulletAPos);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(1)) {
+        if (Input.GetKey(KeyCode.Z) || Input.GetMouseButtonDown(1)) {
             if(!bulletB.active && !bulletA.active)
             {
                 PrepareBullet(bulletB, bulletBPos);            

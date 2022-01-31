@@ -28,7 +28,7 @@ public class BulletA : MonoBehaviour
             // }
             gameObject.SetActive(false);
         }
-        else if (other.tag == "Enemy")
+        if (other.tag == "Enemy")
         {
             // Hazard hazard = other.GetComponent<Hazard>();
             // if (hazard != null)
