@@ -13,13 +13,22 @@ public class BulletA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Enter to collider");
         if (other.tag == "Keys")
+        {
+            // Hazard hazard = other.GetComponent<Hazard>();
+            // if (hazard != null)
+            // {
+            //     hazard.Deactivate();
+            // }
+            gameObject.SetActive(false);
+        }
+        else if (other.tag == "Enemy")
         {
             // Hazard hazard = other.GetComponent<Hazard>();
             // if (hazard != null)

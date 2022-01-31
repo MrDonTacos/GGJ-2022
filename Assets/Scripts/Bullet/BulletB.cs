@@ -13,7 +13,7 @@ public class BulletB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other)
@@ -37,5 +37,14 @@ public class BulletB : MonoBehaviour
         //         enemy.HitTimesForStunned--;
         //     }
         // }
+        else if (other.tag == "Enemy")
+        {
+            // Hazard hazard = other.GetComponent<Hazard>();
+            // if (hazard != null)
+            // {
+            //     hazard.Deactivate();
+            // }
+            gameObject.SetActive(false);
+        }
     }
 }
