@@ -9,9 +9,9 @@ public class MainMenu : MonoBehaviour
     {
         BattleField = 1,
         HighScores,
-        Options,
-        Help, 
-        Credits
+        Options ,
+        Help = 4, 
+        Credits = 5
     }
 
     public void LoadScene(int button)

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bulletB;
     [SerializeField] private Transform bulletAPos;
     [SerializeField] private Transform bulletBPos;
+    [SerializeField] private Animator animSpace;
     private bool isRed = true;
     
 
@@ -41,13 +42,13 @@ public class Player : MonoBehaviour
         position.x = Mathf.Clamp(position.x, leftEdge.x, rightEdge.x);
         transform.position = position;
         */
-        if (Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(0)) {
+        if (Input.GetKey(KeyCode.X) || Input.GetMouseButtonDown(0)) {
             if(!bulletB.active && !bulletA.active)
             {
                 PrepareBullet(bulletA, bulletAPos);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(1)) {
+        if (Input.GetKey(KeyCode.Z) || Input.GetMouseButtonDown(1)) {
             if(!bulletB.active && !bulletA.active)
             {
                 PrepareBullet(bulletB, bulletBPos);            

@@ -637,6 +637,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145355898}
   m_CullTransparentMesh: 1
+--- !u!1 &178232415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5655679603148425620, guid: 1db205fb53074884e90fd0053b3e5d70, type: 3}
+  m_PrefabInstance: {fileID: 7690069517312760375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &178232416
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178232415}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75645cf1ce094b4a4ad7e02c81fbe684, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &300722190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1494,56 @@ Transform:
   m_Father: {fileID: 7690069517312760376}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -12.898, y: 178.614, z: -1.367}
+--- !u!1 &1302264078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1302264080}
+  - component: {fileID: 1302264079}
+  m_Layer: 0
+  m_Name: EnemyAnim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1302264079
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302264078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75645cf1ce094b4a4ad7e02c81fbe684, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &1302264080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302264078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -85.92, y: -9.77, z: 0.11813826}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1343034430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,6 +2463,10 @@ PrefabInstance:
       propertyPath: bulletB
       value: 
       objectReference: {fileID: 444852649}
+    - target: {fileID: 853737008848912833, guid: 1db205fb53074884e90fd0053b3e5d70, type: 3}
+      propertyPath: animSpace
+      value: 
+      objectReference: {fileID: 178232416}
     - target: {fileID: 853737008848912833, guid: 1db205fb53074884e90fd0053b3e5d70, type: 3}
       propertyPath: bulletAPos
       value: 

@@ -25,7 +25,6 @@ public class AutoPlayerMovement : MonoBehaviour
             transform.Translate(transform.right * speed * Time.deltaTime);
             animKeyLeft.SetBool("isPressed", false);
             animKeyRight.SetBool("isPressed", true);
-            animKeyRight.SetFloat("movement", 1f);
         }
         else
         {
@@ -35,7 +34,6 @@ public class AutoPlayerMovement : MonoBehaviour
                 transform.Translate((transform.right * speed * Time.deltaTime) * -1);
                 animKeyRight.SetBool("isPressed", false);
                 animKeyLeft.SetBool("isPressed", true);
-                animKeyRight.SetFloat("movement", -1f);
             }
             else
                 isRight = true;
