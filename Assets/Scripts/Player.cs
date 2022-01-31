@@ -89,8 +89,8 @@ public class Player : MonoBehaviour
 
     void PrepareBullet(GameObject bullet, Transform bulletPosition)
     {
-            bullet.transform.position = bulletPosition.position;
-            bullet.SetActive(true);
+        bullet.transform.position = bulletPosition.position;
+        bullet.SetActive(true);
         if(!isRed)
             isRed = true;
         else
