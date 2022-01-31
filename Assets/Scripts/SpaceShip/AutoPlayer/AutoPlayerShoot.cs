@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AutoPlayerShoot : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class AutoPlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(isLeft);
         if(!isLeft && !bulletB.active)
         {
             keyZ.SetBool("isPressed", false);
@@ -30,6 +32,10 @@ public class AutoPlayerShoot : MonoBehaviour
             keyX.SetBool("isPressed", false);
             keyZ.SetBool("isPressed", true);
             PrepareBullet(bulletB, bulletBPos);
+        }
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

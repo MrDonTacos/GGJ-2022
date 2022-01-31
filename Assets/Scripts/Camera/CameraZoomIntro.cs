@@ -56,7 +56,7 @@ public class CameraZoomIntro : MonoBehaviour
 
                 if (Camera.main.fieldOfView <= 2)
                 {
-                    SceneManager.LoadScene("2d-Game-Human");
+                    SceneManager.LoadScene("MainMenu");
                 }
             }
         }
