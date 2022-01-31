@@ -11,7 +11,7 @@ public class AutoPlayerMovement : MonoBehaviour
     [SerializeField] private Transform keyRight;
     [SerializeField] private Animator animKeyRight;
     public bool isRight = true;
-    public float speed; 
+    public float speed;
     void Start()
     {
         transform = GetComponent<Transform>();
@@ -25,17 +25,17 @@ public class AutoPlayerMovement : MonoBehaviour
             transform.Translate(transform.right * speed * Time.deltaTime);
             animKeyLeft.SetBool("isPressed", false);
             animKeyRight.SetBool("isPressed", true);
+            animKeyRight.SetFloat("movement", 1f);
         }
         else
         {
-            isRight = false;
-            Debug.Log(isRight);  
-            Debug.Log("player x-position: " + transform.position.x + " /n key left x-position: " + keyLeft.position.x);           
+            isRight = false;         
             if(transform.position.x > (keyLeft.position.x -1f) && !isRight)
             {
                 transform.Translate((transform.right * speed * Time.deltaTime) * -1);
                 animKeyRight.SetBool("isPressed", false);
                 animKeyLeft.SetBool("isPressed", true);
+                animKeyRight.SetFloat("movement", -1f);
             }
             else
                 isRight = true;

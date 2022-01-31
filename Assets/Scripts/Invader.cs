@@ -33,9 +33,9 @@ public class Invader : MonoBehaviour
         spriteRenderer.sprite = animationSprites[animationFrame];
     }*/
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Laser")) {
+        if (other.tag == "BulletBlue") {
             killed?.Invoke(this);
         }
     }

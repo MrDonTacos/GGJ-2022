@@ -6,6 +6,12 @@ public class Player : MonoBehaviour
     public Projectile laserPrefab;
     public System.Action killed;
     public bool laserActive { get; private set; }
+    [SerializeField] private GameObject bulletA;
+    [SerializeField] private GameObject bulletB;
+    [SerializeField] private Transform bulletAPos;
+    [SerializeField] private Transform bulletBPos;
+    private bool isRed = true;
+    
 
     private void Update()
     {
@@ -35,8 +41,17 @@ public class Player : MonoBehaviour
         position.x = Mathf.Clamp(position.x, leftEdge.x, rightEdge.x);
         transform.position = position;
         */
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
-            Shoot();
+        if (Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(0)) {
+            if(!bulletB.active && !bulletA.active)
+            {
+                PrepareBullet(bulletA, bulletAPos);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Z) || Input.GetMouseButtonDown(1)) {
+            if(!bulletB.active && !bulletA.active)
+            {
+                PrepareBullet(bulletB, bulletBPos);            
+            }
         }
     }
 
@@ -60,7 +75,7 @@ public class Player : MonoBehaviour
         laserActive = false;
     }*/
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Missile") ||
             other.gameObject.layer == LayerMask.NameToLayer("Invader"))
@@ -69,6 +84,16 @@ public class Player : MonoBehaviour
                 killed.Invoke();
             }
         }
+    }
+
+    void PrepareBullet(GameObject bullet, Transform bulletPosition)
+    {
+            bullet.transform.position = bulletPosition.position;
+            bullet.SetActive(true);
+        if(!isRed)
+            isRed = true;
+        else
+            isRed = false;
     }
 
 }
